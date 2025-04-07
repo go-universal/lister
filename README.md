@@ -118,10 +118,12 @@ func main() {
     l := lister.New().
         SetPage(1).
         SetLimit(10).
-        AddSort("name", "asc")
+        AddSort("name", "asc").
+        SetTotal(125)
 
     fmt.Println("Page:", l.Page())
     fmt.Println("Limit:", l.Limit())
+    fmt.Println("Total Pages:", l.Pages())
     fmt.Println("SQL Sort Order:", l.SQLSortOrder())
 }
 ```
